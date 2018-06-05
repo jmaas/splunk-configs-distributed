@@ -1,0 +1,26 @@
+#
+# /etc/systemd/system/splunkd.service
+#
+# Systemd unit file for managing the Splunk service.
+# Limits as recommended for Splunk version 7.1.1
+#
+[Unit]
+Description=Splunk Enterprise
+After=network.target disable-thp.service
+Wants=network.target
+ 
+[Service]
+Type=forking
+RemainAfterExit=False
+User=splunk
+Group=splunk
+LimitNPROC=16000
+LimitNOFILE=64000
+Environment="SPLUNK_HOME=/opt/splunk"
+ExecStart=/opt/splunk/bin/splunk start --accept-license --answer-yes --no-prompt
+ExecStop=/opt/splunk/bin/splunk stop
+PIDFile=/opt/splunk/var/run/splunk/splunkd.pid
+ 
+[Install]
+WantedBy=multi-user.target
+Alias=splunk.service
