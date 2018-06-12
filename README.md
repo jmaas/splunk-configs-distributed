@@ -40,3 +40,11 @@ Verify that Splunk is not complaining about ulimits:
 06-05-2018 19:44:01.122 +0200 INFO  ulimit - Linux vm.overcommit setting, value="0"
 ```
 
+Deployment apps:
+- `cfg_base`: license server & deploymentclient setup
+- `cfg_indexers`: inputs, volumes and indexes 
+
+Configuration specifications & examples:
+- `configs/*.spec`
+- `configs/*.example`
+

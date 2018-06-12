@@ -1,0 +1,27 @@
+#   Version 7.1.1
+#
+# This file contains an example health.conf.  Use this file to configure thresholds
+# for Splunk Enterprise's built in Health Report.
+#
+# To use one or more of these configurations, copy the configuration block
+# into health.conf in $SPLUNK_HOME/etc/system/local/. You must restart
+# Splunk to enable configurations.
+
+[health_reporter]
+# Every 30 seconds a new ‘PeriodicHealthReporter=INFO’ log entry will be created.
+full_health_log_interval = 30
+# If an indicator’s health status changes before 600 milliseconds elapses,
+# the status change will be suppressed.
+suppress_status_update_ms = 600
+
+[clustering]
+# Clustering health report will run in every 20 seconds.
+health_report_period = 20
+# Enable the clustering feature health check.
+disabled = 0
+
+[feature:s2s_autolb]
+# If more than 20% of forwarding destinations have failed, health status changes to yellow.
+indicator:s2s_connections:yellow = 20
+# If more than 70% of forwarding destinations have failed, health status changes to red.
+indicator:s2s_connections:red = 70
