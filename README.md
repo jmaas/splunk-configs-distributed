@@ -14,6 +14,7 @@ Install:
 - reload systemd unit files from disk: `systemctl daemon-reload`
 - enable the disable-thp service: `systemctl enable disable-thp.service`
 - enable the splunkd service: `systemctl enable splunkd.service`
+- start splunk: `systemctl start splunkd.service`
 
 Verify that THP is disabled:
 ```
@@ -46,8 +47,11 @@ Deployment apps:
 - `cfg_license-server`: deployment client, outputs
 - `cfg_monitoring-console`: deployment client, license master, outputs
 - `cfg_deployment-server`: license master, outputs
+- `cfg_universal-forwarder`: deployment clients, outputs, inputs
 
 Configuration specifications & examples:
 - `configs/*.spec`
 - `configs/*.example`
+
+Misc notes are stored in the `notes/` directory.
 
