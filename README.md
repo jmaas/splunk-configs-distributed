@@ -41,8 +41,11 @@ Verify that Splunk is not complaining about ulimits:
 ```
 
 Deployment apps:
-- `cfg_base`: license server & deploymentclient setup
-- `cfg_indexers`: inputs, volumes and indexes 
+- `cfg_indexers`: deployment client, license master, inputs, volumes and indexes 
+- `cfg_search-heads`: deployment client, license master, outputs, distsearch
+- `cfg_license-server`: deployment client, outputs
+- `cfg_monitoring-console`: deployment client, license master, outputs
+- `cfg_deployment-server`: license master, outputs
 
 Configuration specifications & examples:
 - `configs/*.spec`
