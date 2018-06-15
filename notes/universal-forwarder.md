@@ -1,10 +1,9 @@
 Universal Forwarder
 ===================
 
-See the [Forwarder Manual](http://docs.splunk.com/Documentation/Forwarder/7.1.1/Forwarder/Configuretheuniversalforwarder)
-
-Extract
--------
+References:
+- See the [Forwarder Manual](http://docs.splunk.com/Documentation/Forwarder/7.1.1/Forwarder/Configuretheuniversalforwarder)
+- How to perform remote installations of the forwarder, please read [here](http://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/Installanixuniversalforwarderremotelywithastaticconfiguration)
 
 Setup automatic start at boot, run as `root`:
 ```
