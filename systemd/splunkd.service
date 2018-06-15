@@ -1,7 +1,7 @@
 #
 # /etc/systemd/system/splunkd.service
 #
-# Systemd unit file for managing the Splunk service.
+# Systemd service to manage Splunk
 # Limits as recommended for Splunk version 7.1.1
 #
 [Unit]
@@ -21,6 +21,8 @@ ExecStart=/opt/splunk/bin/splunk start --accept-license --answer-yes --no-prompt
 ExecStop=/opt/splunk/bin/splunk stop
 ExecRestart=/opt/splunk/bin/splunk restart
 PIDFile=/opt/splunk/var/run/splunk/splunkd.pid
+Restart=always
+RestartSec=1
  
 [Install]
 WantedBy=multi-user.target
