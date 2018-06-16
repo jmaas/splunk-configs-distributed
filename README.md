@@ -53,5 +53,4 @@ Configuration specifications & examples:
 - `configs/*.spec`
 - `configs/*.example`
 
-Misc notes are stored in the `notes/` directory.
-
+Misc notes are stored in `docs/`
