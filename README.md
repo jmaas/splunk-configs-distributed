@@ -7,10 +7,10 @@ for the Splunk Certified Architect 1 exam.
 
 
 Install
--------
+=======
 
-Systemd systems
-===============
+Systemd based systems
+---------------------
 - copy `systemd/disable-thp.service` over to `/etc/systemd/system/`
 - copy `systemd/splunkd.service` over to `/etc/systemd/system/`
 - copy `splunk/etc/splunk-launch.conf` over to `/opt/splunk/etc/`
@@ -20,15 +20,15 @@ Systemd systems
 - enable the splunkd service: `systemctl enable splunkd.service`
 - start splunk: `systemctl start splunkd.service`
 
-Sysvinit systems
-================
+Sysvinit based systems
+----------------------
 - copy `sysvinit/99-splunk.conf` over to `/etc/security/limits.d/`
 - disable THP: `echo sysvinit/rc.local >> /etc/rc.local`
 - start splunk on boot: `/opt/splunk/bin/splunk enable boot-start -user splunk`
 - start splunk: `/etc/init.d/splunk start`
 
-Verification
-============
+Check
+=====
 Verify that THP is disabled:
 ```
 [splunk@splunk-mgt ~]$ cat /sys/kernel/mm/transparent_hugepage/defrag
