@@ -1,6 +1,6 @@
 
 This repository contains several basic configuration files required
-by recent Splunk versions for EL7 (RHEL/CentOS/etc).
+by recent Splunk versions. Version used for testing is Splunk 7.1.
 
 I've created this repository to provide a simple baseline as a preparation
 for the Splunk Certified Architect 1 exam.
