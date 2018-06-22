@@ -6,7 +6,11 @@ I've created this repository to provide a simple baseline as a preparation
 for the Splunk Certified Architect 1 exam.
 
 
-Install:
+Install
+-------
+
+Systemd systems
+===============
 - copy `systemd/disable-thp.service` over to `/etc/systemd/system/`
 - copy `systemd/splunkd.service` over to `/etc/systemd/system/`
 - copy `splunk/etc/splunk-launch.conf` over to `/opt/splunk/etc/`
@@ -16,6 +20,15 @@ Install:
 - enable the splunkd service: `systemctl enable splunkd.service`
 - start splunk: `systemctl start splunkd.service`
 
+Sysvinit systems
+================
+- copy `sysvinit/99-splunk.conf` over to `/etc/security/limits.d/`
+- disable THP: `echo sysvinit/rc.local >> /etc/rc.local`
+- start splunk on boot: `/opt/splunk/bin/splunk enable boot-start -user splunk`
+- start splunk: `/etc/init.d/splunk start`
+
+Verification
+============
 Verify that THP is disabled:
 ```
 [splunk@splunk-mgt ~]$ cat /sys/kernel/mm/transparent_hugepage/defrag
@@ -40,6 +53,9 @@ Verify that Splunk is not complaining about ulimits:
 06-05-2018 19:44:01.122 +0200 INFO  ulimit - Linux transparent hugepage support, enabled="never" defrag="never"
 06-05-2018 19:44:01.122 +0200 INFO  ulimit - Linux vm.overcommit setting, value="0"
 ```
+
+Other stuff
+===========
 
 Deployment apps:
 - `cfg_indexers`: deployment client, license master, inputs, volumes and indexes 
