@@ -1,6 +1,7 @@
 
 This repository contains several basic configuration files required
-by recent Splunk versions. Version used for testing is Splunk 7.1.
+by recent Splunk versions. 
+Version used for testing is Splunk 7.1.
 
 I've created this repository to provide a simple baseline as a preparation
 for the Splunk Certified Architect 1 exam.
@@ -64,9 +65,5 @@ Deployment apps:
 - `cfg_monitoring-console`: deployment client, license master, outputs
 - `cfg_deployment-server`: license master, outputs
 - `cfg_universal-forwarder`: deployment clients, outputs, inputs
-
-Configuration specifications & examples:
-- `configs/*.spec`
-- `configs/*.example`
 
 Misc notes are stored in `docs/`
